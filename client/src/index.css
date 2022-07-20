@@ -5,9 +5,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(113,113,113);
+  background: linear-gradient(0deg, rgba(113,113,113,1) 0%, rgba(65,65,65,1) 29%, rgba(0,0,0,1) 100%);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@font-face {
+  font-family: 'Ailerons';
+  src: local('Ailerons'), url(./fonts/Ailerons-Typeface.otf) format('opentype');
 }
