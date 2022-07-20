@@ -1,0 +1,103 @@
+.card{
+    background-position: center;
+    background-size: cover;
+    padding: 10rem 0 0;
+    max-width: 35ch;
+    --mycolor:#85ff33;
+    border-radius: 1em;
+    overflow: hidden;
+    transition: transform 500ms ease;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card:hover .card-content{
+    transform: translateY(0);
+}
+
+.secondline{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card-content{
+    --padding:1.5rem;
+    padding: 1.5rem 0 1.5rem 0;
+    background: linear-gradient(
+        hsl(0 0% 0% / 0),
+        hsl(0 0% 0% / 0.5),
+        hsl(0 0% 0% / 1)
+    );
+    transform: translateY(45%);
+    transition: transform 500ms ease;
+}
+
+.card-title{
+    position: relative;
+    color: white;
+    width: max-content;
+    padding-left: var(--padding);
+}
+
+.card-price{
+    background: var(--mycolor);
+    padding-right: 5px;
+    padding-left: 2px;
+    border-radius: 0 5px 5px 0;
+    margin: 0;
+}
+
+.card-title::after{
+    content:'';
+    position: absolute;
+    height: 4px;
+    background: var(--mycolor);
+    left: calc(var(--padding) * -1);
+    width: calc(100% + var(--padding));
+    bottom: 0;
+    transform: scaleX(0);
+    transition: transform 500ms ease;
+    transform-origin: left;
+    border-radius: 0 3px 3px 0;
+}
+
+.card:hover .card-title::after{
+    transform: scaleX(1);
+}
+
+.card-button{
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(27, 27, 27);
+    background-color: var(--mycolor);
+    padding: 0.25em 1.25em;
+    border: none;
+    height: 27px;
+    border-radius: 5px 0 0 5px;
+}
+
+.card-button:hover,
+.card-button:focus{
+    background-color: aliceblue;
+}
+
+@media (max-width:640px) {
+    h2{
+        --padding:0.5rem;
+        font-size: 12px;
+    }
+    .card-title::after{
+        height: 2px;
+    }
+    .card-button{
+        height: 14px;
+        font-size: 11px;
+        padding: 0 2vw;
+    }
+}

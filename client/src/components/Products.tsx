@@ -33,12 +33,12 @@ const Products = () => {
   return (
     <Box >
         <Box sx={{display:'flex',justifyContent:'flex-start',color:'white',marginY:2,marginX:2}}>
-            <Typography sx={{fontSize:'5vw',fontFamily:'Ailerons' ,color:'#Af3cfd'}} >Meet our products!</Typography>
+            <Typography sx={{fontSize:'5vw',fontFamily:'Ailerons' ,color:'#85ff33'}} >Meet our products!</Typography>
         </Box>
         <Box sx={{marginX:5}}>
             <Grid container spacing={5}>
                 {products.map((product:Int.Product)=>(
-                    <Grid item xs={6} sm={3}>
+                    <Grid item xs={6} md={3}>
                     <CardComponent {...product}/>
                     </Grid>
                 ))}
