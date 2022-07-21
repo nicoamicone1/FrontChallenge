@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgb(113,113,113);
-  background: linear-gradient(0deg, rgba(113,113,113,1) 0%, rgba(65,65,65,1) 29%, rgba(0,0,0,1) 100%);
+  background: linear-gradient(0deg, rgb(80, 80, 80) 0%, rgba(65,65,65,1) 29%, rgba(0,0,0,1) 100%);
 }
 
 code {
@@ -17,4 +17,10 @@ code {
 @font-face {
   font-family: 'Ailerons';
   src: local('Ailerons'), url(./fonts/Ailerons-Typeface.otf) format('opentype');
+}
+
+.Meet{
+  background: -webkit-linear-gradient(#85ff33, rgb(0, 170, 85));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

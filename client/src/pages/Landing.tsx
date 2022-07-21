@@ -10,7 +10,6 @@ const Landing = () => {
         <NavBar/>
         <Carrusel/>
         <Products/>
-        <Box sx={{height:2000}}></Box>
     </div>
   );
 };

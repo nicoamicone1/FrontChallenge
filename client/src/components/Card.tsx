@@ -1,21 +1,16 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { useNavigate } from 'react-router-dom';
 import * as Int from '../interfaces'
 import './Card.css'
 
 export default function MediaCard(product:Int.Product) {
+  const navigate=useNavigate()
   return (
-    <div className='card' style={{backgroundImage:`url(${product.image_url})`}}>
+    <div className='card' style={{backgroundImage:`url(${product.image_url[0]})`}}>
       <div className='card-content'>
-        <h2 className='card-title'>{product.name}</h2>
+        <h3 className='card-title'>{product.name}</h3>
         <div className='secondline'>
         <h2 className='card-price'>$ {product.price}</h2>
-        <button className='card-button'>View Details</button>
+        <button className='card-button' onClick={()=>navigate(`product/${product._id}`)}>View Details</button>
         </div>
       </div>
     </div>
