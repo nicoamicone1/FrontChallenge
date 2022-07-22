@@ -78,15 +78,17 @@
     text-decoration: none;
     color: rgb(27, 27, 27);
     background: -webkit-linear-gradient(#85ff33, rgb(0, 170, 85));
+    font-weight: 700;
     padding: 0.25em 1.25em;
     border: none;
     height: 27px;
     border-radius: 5px 0 0 5px;
+    transition: 500ms ease;
 }
 
 .card-button:hover,
 .card-button:focus{
-    background-color: rgb(255, 255, 255);
+    transform: scale(1.1);
 }
 @media (max-width:640px) {
     h3{
