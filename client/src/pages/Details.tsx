@@ -1,5 +1,5 @@
 import { Box, CardMedia, Divider, Typography } from '@mui/material';
-import NavBar from './NavBar'
+import NavBar from '../components/NavBar'
 import * as Int from '../interfaces'
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';

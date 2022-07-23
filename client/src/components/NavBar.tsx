@@ -17,10 +17,11 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-
+import Login from './Login'
+import Cookie from 'js-cookie'
 
 const pages = ['Products', 'Brands'];
-const settings = ['About Me'];
+const settings = ['Login'];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -153,11 +154,12 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+                { !Cookie.get("token") && <MenuItem key="1" onClick={handleCloseUserMenu}>
+                  <Login/>
+                </MenuItem>}
+                { Cookie.get("token") && <MenuItem key="1" onClick={handleCloseUserMenu}>
+                  <Typography>Create Product</Typography>
+                </MenuItem>}
             </Menu>
           </Box>
         </Toolbar>
