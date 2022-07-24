@@ -93,8 +93,9 @@ export default function CustomizedDialogs() {
                         title: 'Product deleted',
                         text: ``,
                         icon: 'success',
-                      })
-                      window.location.reload()
+                      }).then((res)=>{
+                        if(res.isConfirmed)window.location.reload()
+                      })                     
                 }else{
                     swal.fire({
                         title: 'Product cannot be deleted',

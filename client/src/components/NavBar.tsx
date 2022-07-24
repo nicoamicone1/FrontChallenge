@@ -66,7 +66,7 @@ const ResponsiveAppBar = () => {
             MyShoes
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' },visibility:"hidden" }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -92,7 +92,7 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: 'block', md: 'none' }
               }}
             >
               {pages.map((page) => (
@@ -119,7 +119,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            MyShoes
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },visibility:"hidden",justifyContent:'center' }}>
             {pages.map((page) => (
