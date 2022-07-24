@@ -196,7 +196,7 @@ export default function ProductDetails() {
                                 sx={{background: "-webkit-linear-gradient(#85ff33, rgb(0, 170, 85));",m:1,maxWidth:90,fontSize:15,borderRadius:2,p:1}}
                                 onClick={()=>{
                                     const token = Cookie.get("token")
-                                    axios.post("http://localhost:3000/products",{
+                                    axios.post("https://apimyshoes.herokuapp.com/products",{
                                         name:product.name,
                                         description:product.description,
                                         price:product.price,

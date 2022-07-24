@@ -67,7 +67,7 @@ export default function CustomizedDialogs() {
     setOpen(false);
   };
   React.useEffect(()=>{
-        axios("http://localhost:3000/products").then((res)=>setProducts(()=>res.data))
+        axios("https://apimyshoes.herokuapp.com/products").then((res)=>setProducts(()=>res.data))
   })
 
   const handleDelete=(product:Int.Product)=>{
@@ -83,7 +83,7 @@ export default function CustomizedDialogs() {
       }).then((res)=>{
         if(res.isConfirmed){
             const token=Cookie.get("token")
-            axios.delete(`http://localhost:3000/products/${product._id}`,{
+            axios.delete(`https://apimyshoes.herokuapp.com/products/${product._id}`,{
                 headers:{
                     "x-access-token":token as string
                 }

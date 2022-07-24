@@ -31,7 +31,7 @@ export default function ProductDetails() {
 
     useEffect(()=>{
         window.scroll(0,0)
-        fetch(`http://localhost:3000/products/${id}`).then((res)=>res.json()).then(data=>{
+        fetch(`https://apimyshoes.herokuapp.com/products/${id}`).then((res)=>res.json()).then(data=>{
             setImage(()=>data.image_url[0])
             setProduct(()=>data as Int.Product)
         })

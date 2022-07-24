@@ -27,7 +27,7 @@ export default function FormDialog() {
 
   const submit=()=>{
     if(reg){
-        axios.post("http://localhost:3000/login",{username,password}).then((r)=>{
+        axios.post("https://apimyshoes.herokuapp.com/login",{username,password}).then((r)=>{
             if(r.data.token){
                 Cookies.set("token",r.data.token)
                 setOpen(false);
@@ -50,7 +50,7 @@ export default function FormDialog() {
         })
     }
     else{
-        axios.post("http://localhost:3000/signup",{username,password}).then((r)=>{
+        axios.post("https://apimyshoes.herokuapp.com/signup",{username,password}).then((r)=>{
             setOpen(false);
             if(r.data.message==="Successfully registered"){
                 swal.fire({

@@ -8,7 +8,7 @@ import { useState,useEffect } from 'react';
 const Products = () => {
     var [products,setProducts]=useState<Int.Product[]>([])
     React.useEffect(()=>{
-        fetch("http://localhost:3000/products").then((res)=>res.json()).then(data=>setProducts(()=>data as Int.Product[]))
+        fetch("https://apimyshoes.herokuapp.com/products").then((res)=>res.json()).then(data=>setProducts(()=>data as Int.Product[]))
     },[])
   return (
     <Box >
