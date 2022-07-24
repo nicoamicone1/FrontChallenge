@@ -40,7 +40,7 @@ export default function ProductDetails() {
     <Box>
         <NavBar/>
         <Box sx={{mt:{xs:'250px',md:10},display:'flex',justifyContent:'center',height:'100vh'}}>
-            <Box sx={{display:'flex',justifyContent:'center',maxHeight:508,flexDirection:{xs:'column',md:'row'}}}>
+            <Box sx={{display:'flex',justifyContent:'center',maxHeight:590,flexDirection:{xs:'column',md:'row'}}}>
                 <Box sx={{display:'flex',flexDirection:'column',maxWidth:{xs:294,md:500},marginX:'auto'}}>
                 <CardMedia
                 component="img"
