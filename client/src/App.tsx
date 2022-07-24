@@ -6,8 +6,10 @@ import Create from './pages/Create'
 import ProductDetails from './pages/Details';
 import {
   Routes,
-  Route
+  Route,
+  Navigate
 } from "react-router-dom";
+import Cookie from 'js-cookie';
 
 function App() {
   return (

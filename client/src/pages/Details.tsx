@@ -61,7 +61,7 @@ export default function ProductDetails() {
                         <CardMedia
                         component="img"
                         image={product.brand.logo_url}
-                        sx={{filter: "invert(100%)",width:50,height:50}}
+                        sx={{filter: "invert(100%)",width:50,height:50,objectFit:"contain"}}
                         />
                         <Typography sx={{color:'white',fontFamily:'ailerons',fontSize:20,}}>{product.brand.name}</Typography>
                     </Box>

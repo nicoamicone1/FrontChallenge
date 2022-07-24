@@ -13,7 +13,7 @@ const Products = () => {
   return (
     <Box >
         <Box sx={{display:'flex',justifyContent:'flex-start',color:'white',marginY:2,marginX:2}}>
-            <Typography sx={{fontSize:'5vw',fontFamily:'Ailerons' }} className='Meet' >Meet our products!</Typography>
+            <Typography id="scroll1" sx={{fontSize:'5vw',fontFamily:'Ailerons' }} className='Meet' >Meet our products!</Typography>
         </Box>
         <Box sx={{marginX:5,mb:10}}>
             <Grid container spacing={5}>

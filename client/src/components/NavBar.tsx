@@ -11,7 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import SnowshoeingIcon from '@mui/icons-material/Snowshoeing';
 import './NavBar.css'
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -19,11 +19,13 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import Login from './Login'
 import Cookie from 'js-cookie'
+import { useNavigate } from 'react-router-dom';
+import DeleteProduct from "./Delete"
 
-const pages = ['Products', 'Brands'];
-const settings = ['Login'];
+const pages = ['Products'];
 
 const ResponsiveAppBar = () => {
+  const navigate=useNavigate()
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
@@ -41,12 +43,11 @@ const ResponsiveAppBar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
   return (
     <AppBar position="fixed" className='linearbg' sx={{bgcolor:'transparent'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <SnowshoeingIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -62,7 +63,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            MyShoes
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -101,7 +102,7 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <SnowshoeingIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -120,11 +121,10 @@ const ResponsiveAppBar = () => {
           >
             LOGO
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },justifyContent:'center' }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },visibility:"hidden",justifyContent:'center' }}>
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: '#85ff33', display: 'block' }}
               >
                 {page}
@@ -135,7 +135,7 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar/>
               </IconButton>
             </Tooltip>
             <Menu
@@ -157,8 +157,17 @@ const ResponsiveAppBar = () => {
                 { !Cookie.get("token") && <MenuItem key="1" onClick={handleCloseUserMenu}>
                   <Login/>
                 </MenuItem>}
-                { Cookie.get("token") && <MenuItem key="1" onClick={handleCloseUserMenu}>
+                { Cookie.get("token") && <MenuItem key="2" onClick={()=>navigate("/create")}>
                   <Typography>Create Product</Typography>
+                </MenuItem>}
+                { Cookie.get("token") && <MenuItem key="3" onClick={handleCloseUserMenu}>
+                  <DeleteProduct/>
+                </MenuItem>}
+                { Cookie.get("token") && <MenuItem key="4" onClick={()=>{
+                  Cookie.remove("token")
+                  window.location.reload()
+                  }}>
+                  <Typography>Logout</Typography>
                 </MenuItem>}
             </Menu>
           </Box>
