@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar'
 import * as Int from '../interfaces'
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Loading from '../components/Loading';
 
 // const product={
 //     _id:'021232131',
@@ -40,7 +41,7 @@ export default function ProductDetails() {
     <Box>
         <NavBar/>
         <Box sx={{mt:{xs:'250px',md:10},display:'flex',justifyContent:'center',height:'100vh'}}>
-            <Box sx={{display:'flex',justifyContent:'center',maxHeight:590,flexDirection:{xs:'column',md:'row'}}}>
+            {product.name!==""?<Box sx={{display:'flex',justifyContent:'center',maxHeight:590,flexDirection:{xs:'column',md:'row'}}}>
                 <Box sx={{display:'flex',flexDirection:'column',maxWidth:{xs:294,md:500},marginX:'auto'}}>
                 <CardMedia
                 component="img"
@@ -79,7 +80,8 @@ export default function ProductDetails() {
                         </Box>
                     </Box>
                 </Box>
-            </Box>
+            </Box>:<Loading/>}
+            
         </Box>
     </Box>
   );
